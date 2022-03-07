@@ -13,7 +13,7 @@ export const Login = () => {
                 </div>
                 <input className="loginInput" type="text" placeholder="Username" />
                 <input className="loginInput" type="text" placeholder="Password" />
-                <Link to="/repos"><button className="bn632-hover bn28">Login</button></Link>
+                <Link to="/home"><button className="bn632-hover bn28">Login</button></Link>
             </div>
         </div>
     )

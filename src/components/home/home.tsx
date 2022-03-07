@@ -1,13 +1,13 @@
 import './home.css'
 import { useState } from 'react';
-import {TypeStudent} from '../../types/typesComponent'
+import { TypeStudent } from '../../types/typesComponent'
 
 export const Home = () => {
 
 
     const myStudent: TypeStudent = {
-        name: "ciao",
-        surname: "",
+        name: "federico",
+        surname: "Micca",
         login: "",
     }
 
@@ -16,8 +16,10 @@ export const Home = () => {
 
     return (
         <div className="homeContainer">
-            {student.surname}
-            <h1>ciao</h1>
+            <h1>GitClass ADMIN</h1>
+            <h3>benvenuto</h3>
+            {student.surname}{student.name}
+
         </div>
     )
 };

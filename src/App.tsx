@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom'
-import { Head } from './layout/head/Head';
+import {Head} from './layout/head/Head'
 
 
 function App() {

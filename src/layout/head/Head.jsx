@@ -18,6 +18,7 @@ import InputBase from '@mui/material/InputBase';
 import "./head.css"
 import avatarImg from '../../images/avatar.jpg'
 import { Link, useSearchParams } from "react-router-dom";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -193,7 +194,6 @@ export const Head = () => {
                             </div>
 
                         </Box>
-                       
                        
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
