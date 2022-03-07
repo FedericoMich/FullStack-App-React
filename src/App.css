@@ -1,38 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
+
+body{
+  padding-right: 0 !important
+}
+
+:root {
+  --mainFont: 'B612 Mono', monospace;
+  --fontcolor1: black;
+  --fontcolor2: whitesmoke;
+  --color1: #0d2137;
+  --color2: #2E77AE;
+  --color3: #E0EAF5;
+  --color4: #FF8E2B;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-family: var(--mainFont) !important;
+  background-color: var(--color3);
+  padding-bottom: 8rem;
 }
