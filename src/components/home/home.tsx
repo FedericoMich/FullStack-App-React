@@ -7,7 +7,13 @@ import { useAuth } from '../../hooks/useAuth';
 
 export const Home = () => {
 
-   useAuth();
+
+    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+        const newValue = e.currentTarget.value;
+        console.log(newValue)
+    }
+
+    useAuth();
 
 
     const myStudent: TypeStudent = {
@@ -24,6 +30,8 @@ export const Home = () => {
             <h1>GitClass ADMIN</h1>
             <Details {...student} />
             <button onClick={() => listRepos()}>API Call (Log)</button>
+            <br/> <br/> <br/> onchange -- console.log
+            <input type="text" name="alert" onChange={handleChange}></input>
         </div>
     )
 };
