@@ -9,6 +9,7 @@ export type TypeStudent = {
     name: string;
     surname: string;    
     login: string;
+    session: boolean;
     class?: TypeClass;
     repos?: string[];
 }

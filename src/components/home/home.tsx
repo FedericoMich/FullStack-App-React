@@ -3,14 +3,18 @@ import { useState } from 'react';
 import { TypeStudent } from '../../types/typesComponent'
 import { Details } from './details'
 import { listRepos } from '../../api/apiRepos'
+import { useAuth } from '../../hooks/useAuth';
 
 export const Home = () => {
+
+   useAuth();
 
 
     const myStudent: TypeStudent = {
         name: "federico",
         surname: "Micca",
         login: "",
+        session: false
     }
 
     const [student] = useState<TypeStudent>(myStudent);
