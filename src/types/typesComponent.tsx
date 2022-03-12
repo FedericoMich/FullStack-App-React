@@ -15,4 +15,12 @@ export type TypeStudent = {
 }
 
 
+export type TypePages = {
+    id: number;
+    action: Element;     
+}
+
+
+
+
 
