@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { TypeStudent } from '../types/typesComponent'
 
 export const listRepos = async () => {
     try {
@@ -19,6 +18,29 @@ export const listRepos = async () => {
             }
             throw new Error(error.response?.data);
 
+        }else {
+            console.log(error);
+            throw error;
+        }
+    }
+}
+
+
+export const getUser = async () => {
+    try {
+        const url = process.env.REACT_APP_GET_USER ? process.env.REACT_APP_GET_USER : ""
+        const response = await axios.get(
+            url
+        );
+        console.log(response.data)
+        return  response.data ? response.data : undefined;
+    
+    }catch (error){
+        if(axios.isAxiosError(error)){
+            if(error.response){
+                console.log(error.response.status);
+            }
+            throw new Error(error.response?.data);
         }else {
             console.log(error);
             throw error;

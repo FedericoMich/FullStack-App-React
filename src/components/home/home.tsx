@@ -4,6 +4,8 @@ import { TypeStudent } from '../../types/typesComponent'
 import { Details } from './details'
 import { listRepos } from '../../api/apiRepos'
 import { useAuth } from '../../hooks/useAuth';
+import { getUser } from '../../api/apiRepos'
+ 
 
 export const Home = () => {
 
@@ -22,17 +24,6 @@ export const Home = () => {
 
     function handleReposChange(event: any) {
         setRepos(event.target.value)
-    }
-
-
-    async function getUser() {
-        let response: any = await fetch('http://localhost:9000/user/', {
-            mode: 'no-cors',
-            credentials: 'include'
-        })
-        response = await response.json()
-        console.log(response)
-
     }
 
 
@@ -83,7 +74,7 @@ export const Home = () => {
 
             <br /> <br /> <br /> <br />
 
-            <form action="/" method="post">
+            <form>
                 <div className='form-inputs'>
                     <input
                         className='form-input'
