@@ -47,3 +47,30 @@ export const getUser = async () => {
         }
     }
 }
+
+
+export const addUser = async (name:string,surname:string,repos:string) => {
+    try {
+        const url = process.env.REACT_APP_ADD_USER ? process.env.REACT_APP_ADD_USER  : ""
+        const response = await axios.post(
+            url, {nome: name, cognome: surname, repos: repos }
+        );
+        console.log(response.data)
+        return  response.data ? response.data : undefined;
+    
+    }catch (error){
+        if(axios.isAxiosError(error)){
+            if(error.response){
+                console.log(error.response.status);
+            }
+            throw new Error(error.response?.data);
+        }else {
+            console.log(error);
+            throw error;
+        }
+    }
+}
+
+
+
+

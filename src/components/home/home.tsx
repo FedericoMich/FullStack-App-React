@@ -4,13 +4,13 @@ import { TypeStudent } from '../../types/typesComponent'
 import { Details } from './details'
 import { listRepos } from '../../api/apiRepos'
 import { useAuth } from '../../hooks/useAuth';
-import { getUser } from '../../api/apiRepos';
 import {Button, TextField} from "@mui/material";
 //import {Corso} from "../corso/corso";
+import { getUser } from '../../api/apiRepos'
+import {useUser} from '../../hooks/useUser'
+
  
-
 export const Home = () => {
-
 
     const [input, setInput] = useState<String>('')
     const [name, setName] = useState('')
@@ -19,16 +19,19 @@ export const Home = () => {
     const [anno, setAnno] = useState('')
     const [titolo, setTitolo] = useState('')
 
+    const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
+
+
     function handleNameChange(event: any) {
         setName(event.target.value)
     }
     function handleSurnameChange(event: any) {
         setSurname(event.target.value)
     }
-
     function handleReposChange(event: any) {
         setRepos(event.target.value)
     }
+
 
     function handleAnnoChange(event: any) {
         setAnno(event.target.value);
@@ -85,7 +88,7 @@ export const Home = () => {
             <input type="text" name="alert" onChange={handleChange}></input>
             <button onClick={handleClick}>Click</button>
 
-            <button onClick={getUser}>CHIAMAAAAAAAAAA</button>
+            <button onClick={getUser}>Lista Studenti in DB</button>
 
             <br /> <br /> <br /> <br />
 
@@ -120,8 +123,8 @@ export const Home = () => {
                     />
                 </div>
                 <br /> <br />
-                <button className='form-input-btn' type='submit' onClick={addStudent}>
-                    add User
+                <button className='form-input-btn' type='submit' onClick={UserAdd}>
+                    Add_User
                 </button>
             </form>
             <h2>Non hai ancora nessun corso</h2>
