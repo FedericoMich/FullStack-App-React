@@ -18,7 +18,7 @@ export const Home = () => {
     const [anno, setAnno] = useState('')
     const [titolo, setTitolo] = useState('')
 
-    const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
+    const { UserAdd  } = useUser( name, surname, repos );
 
 
     function handleNameChange(event: any) {
@@ -30,34 +30,14 @@ export const Home = () => {
     function handleReposChange(event: any) {
         setRepos(event.target.value)
     }
-
-
-
     function handleAnnoChange(event: any) {
         setAnno(event.target.value);
         console.log(anno);
     }
-
     function handleTitoloChange(event: any) {
         setTitolo(event.target.value);
         console.log(titolo);
     }
-
-
-    async function addStudent() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({nome: name, cognome: surname, repos:repos })
-        };
-        let response = await fetch('http://localhost:9000/user/addStudent/', requestOptions)
-        
-        if (response.status === 200) {
-            console.log("dajee")
-        }
-    }
-
-
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         const newValue = e.currentTarget.value;

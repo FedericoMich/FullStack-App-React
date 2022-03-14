@@ -52,9 +52,8 @@ export const getUser = async () => {
 export const addUser = async (name:string,surname:string,repos:string) => {
     try {
         const url = process.env.REACT_APP_ADD_USER ? process.env.REACT_APP_ADD_USER  : ""
-        const response = await axios.post(
-            url, {nome: name, cognome: surname, repos: repos }
-        );
+        const data = {name: name, surname: surname, repos: repos };
+        const response = await axios.post(url, data);
         console.log(response.data)
         return  response.data ? response.data : undefined;
     
