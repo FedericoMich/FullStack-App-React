@@ -4,7 +4,9 @@ import { TypeStudent } from '../../types/typesComponent'
 import { Details } from './details'
 import { listRepos } from '../../api/apiRepos'
 import { useAuth } from '../../hooks/useAuth';
-import { getUser } from '../../api/apiRepos'
+import { getUser } from '../../api/apiRepos';
+import {Button, TextField} from "@mui/material";
+//import {Corso} from "../corso/corso";
  
 
 export const Home = () => {
@@ -14,6 +16,8 @@ export const Home = () => {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [repos, setRepos] = useState('')
+    const [anno, setAnno] = useState('')
+    const [titolo, setTitolo] = useState('')
 
     function handleNameChange(event: any) {
         setName(event.target.value)
@@ -24,6 +28,16 @@ export const Home = () => {
 
     function handleReposChange(event: any) {
         setRepos(event.target.value)
+    }
+
+    function handleAnnoChange(event: any) {
+        setAnno(event.target.value);
+        console.log(anno);
+    }
+
+    function handleTitoloChange(event: any) {
+        setTitolo(event.target.value);
+        console.log(titolo);
     }
 
 
@@ -64,6 +78,7 @@ export const Home = () => {
     return (
         <div className="homeContainer">
             <h1>GitClass ADMIN</h1>
+            {/*<Corso></Corso>*/}
             <Details {...student} />
             <button onClick={() => listRepos()}>API Call (Log)</button>
             <br /> <br /> <br /> onchange/onclick -- console.log/alert <br /> <br /> <br />
@@ -101,7 +116,6 @@ export const Home = () => {
                         type='repos'
                         name='repos'
                         placeholder='repos'
-                        value={repos}
                         onChange={handleReposChange}
                     />
                 </div>
@@ -110,6 +124,24 @@ export const Home = () => {
                     add User
                 </button>
             </form>
+            <h2>Non hai ancora nessun corso</h2>
+            <Button variant="contained">Crea nuovo corso</Button>
+            <TextField
+          required
+          id="outlined-required"
+          label="Titolo"
+          defaultValue=""
+          value={titolo}
+            onChange={handleTitoloChange}
+            />
+            <TextField
+          required
+          id="outlined-required"
+          label="Anno"
+          defaultValue=""
+          value={anno}
+          onChange={handleAnnoChange}
+            />
         </div>
     )
 };

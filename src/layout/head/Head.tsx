@@ -11,6 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import {Corso} from "../../components/corso/corso";
+import {Logo} from "../../components/logo/logo";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -45,8 +47,9 @@ export const Head = () => {
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
             LOGO
+            <Logo/>
           </Typography>
-
+          <Corso/>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
