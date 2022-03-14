@@ -11,8 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import {Corso} from "../../components/corso/corso";
+import {CorsoButton} from "../../components/corso/corso";
 import {Logo} from "../../components/logo/logo";
+import { Link } from "react-router-dom";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -49,7 +50,7 @@ export const Head = () => {
             LOGO
             <Logo/>
           </Typography>
-          <Corso/>
+          <Link to="/corso"><CorsoButton/></Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
