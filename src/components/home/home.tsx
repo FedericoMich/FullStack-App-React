@@ -21,9 +21,6 @@ export const Home = () => {
     const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
 
 
-    const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
-
-
     function handleNameChange(event: any) {
         setName(event.target.value)
     }
