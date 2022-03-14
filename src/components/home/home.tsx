@@ -5,15 +5,17 @@ import { Details } from './details'
 import { listRepos } from '../../api/apiRepos'
 import { useAuth } from '../../hooks/useAuth';
 import { getUser } from '../../api/apiRepos'
+import {useUser} from '../../hooks/useUser'
  
-
 export const Home = () => {
-
 
     const [input, setInput] = useState<String>('')
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [repos, setRepos] = useState('')
+
+    const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
+
 
     function handleNameChange(event: any) {
         setName(event.target.value)
@@ -21,25 +23,9 @@ export const Home = () => {
     function handleSurnameChange(event: any) {
         setSurname(event.target.value)
     }
-
     function handleReposChange(event: any) {
         setRepos(event.target.value)
     }
-
-
-    async function addStudent() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({nome: name, cognome: surname, repos:repos })
-        };
-        let response = await fetch('http://localhost:9000/user/addStudent/', requestOptions)
-        
-        if (response.status === 200) {
-            console.log("dajee")
-        }
-    }
-
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         const newValue = e.currentTarget.value;
@@ -70,7 +56,7 @@ export const Home = () => {
             <input type="text" name="alert" onChange={handleChange}></input>
             <button onClick={handleClick}>Click</button>
 
-            <button onClick={getUser}>CHIAMAAAAAAAAAA</button>
+            <button onClick={getUser}>Lista Studenti in DB</button>
 
             <br /> <br /> <br /> <br />
 
@@ -106,8 +92,8 @@ export const Home = () => {
                     />
                 </div>
                 <br /> <br />
-                <button className='form-input-btn' type='submit' onClick={addStudent}>
-                    add User
+                <button className='form-input-btn' type='submit' onClick={UserAdd}>
+                    Add_User
                 </button>
             </form>
         </div>
