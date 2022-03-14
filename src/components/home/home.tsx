@@ -9,7 +9,6 @@ import {Button, TextField} from "@mui/material";
 import { getUser } from '../../api/apiRepos'
 import {useUser} from '../../hooks/useUser'
 
- 
 export const Home = () => {
 
     const [input, setInput] = useState<String>('')
@@ -18,6 +17,9 @@ export const Home = () => {
     const [repos, setRepos] = useState('')
     const [anno, setAnno] = useState('')
     const [titolo, setTitolo] = useState('')
+
+    const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
+
 
     const { createUser, loading, onError, UserAdd  } = useUser( name, surname, repos );
 
@@ -31,6 +33,7 @@ export const Home = () => {
     function handleReposChange(event: any) {
         setRepos(event.target.value)
     }
+
 
 
     function handleAnnoChange(event: any) {
@@ -56,6 +59,7 @@ export const Home = () => {
             console.log("dajee")
         }
     }
+
 
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
