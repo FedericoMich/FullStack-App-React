@@ -71,5 +71,52 @@ export const addUser = async (name:string,surname:string,repos:string) => {
 }
 
 
+/*#####COURSE API#####*/
+
+
+export const getCourse = async () => {
+    try {
+        const url = process.env.REACT_APP_GET_COURSE ? process.env.REACT_APP_GET_COURSE: ""
+        const response = await axios.get(
+            url
+        );
+        console.log(response.data)
+        return  response.data ? response.data : undefined;
+    
+    }catch (error){
+        if(axios.isAxiosError(error)){
+            if(error.response){
+                console.log(error.response.status);
+            }
+            throw new Error(error.response?.data);
+        }else {
+            console.log(error);
+            throw error;
+        }
+    }
+}
+
+export const addCourse = async (name:string, year:string) => {
+    try {
+        const url = process.env.REACT_APP_ADD_COURSE ? process.env.REACT_APP_ADD_COURSE  : ""
+        const data = {name: name, year: year };
+        const response = await axios.post(url, data);
+        console.log(response.data)
+        return  response.data ? response.data : undefined;
+    
+    }catch (error){
+        if(axios.isAxiosError(error)){
+            if(error.response){
+                console.log(error.response.status);
+            }
+            throw new Error(error.response?.data);
+        }else {
+            console.log(error);
+            throw error;
+        }
+    }
+}
+
+
 
 
