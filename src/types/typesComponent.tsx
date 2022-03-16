@@ -7,7 +7,7 @@ export type TypeClass = {
 
 export type TypeStudent = {
     name: string;
-    surname: string;    
+    surname: string;
     login: string;
     session: boolean;
     class?: TypeClass;
@@ -17,8 +17,21 @@ export type TypeStudent = {
 
 export type TypePages = {
     id: number;
-    action: Element;     
+    action: Element;
 }
+
+
+export type CourseType = {
+    name: string,
+    year: string
+};
+
+export type UserType = {
+    name: string,
+    surname: string,
+    repos: string,
+};
+
 
 
 

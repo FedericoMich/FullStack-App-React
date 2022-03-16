@@ -1,0 +1,8 @@
+
+.commitCard {
+    margin: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+    width: 380px;
+    max-width: 400px;
+}

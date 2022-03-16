@@ -1,17 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { addCourse } from "../api/apiRepos"
+import { getCourse } from "../api/apiRepos"
 
 
 
-export const useCourse = (name:string, year:string) => {
+export const useCourse = () => {
     const [createCourse, setCreateCourse] = useState([]);
+    const [Course, setCourse] = useState([]);
     const [loading, setLoading] = useState(true)
     const [onError, setOnError] = useState(false);
 
-    /*  useEffect(() => {
+      useEffect(() => {
           const populate = async () => {
               try {
-                  setDetailRepos(await addUser( name,surname,repos ))
+                  setCourse(await getCourse())
                   setLoading(false)
               } catch (err) {
                   setOnError(true);
@@ -19,11 +21,11 @@ export const useCourse = (name:string, year:string) => {
               }
           }
           populate()
-      }, [login, repoName])
+      }, [])
   
-      */
+      
 
-    const CourseAdd = async () => {
+    const CourseAdd = async (name:string, year:string) => {
         setLoading(true)
         try {
             setCreateCourse(await addCourse(name, year))
@@ -34,5 +36,5 @@ export const useCourse = (name:string, year:string) => {
         }
     }
 
-    return { createCourse, loading, onError, CourseAdd };
+    return { createCourse, loading, onError, CourseAdd, Course };
 }
