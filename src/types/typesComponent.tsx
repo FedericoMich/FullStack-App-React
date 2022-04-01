@@ -21,18 +21,16 @@ export type TypePages = {
 }
 
 
-export type CourseType = {
+export interface CourseType {
+    id?: any | null,
     name: string,
-    year: string
-};
-
+    year: string,
+  }
 export type UserType = {
     name: string,
     surname: string,
     repos: string,
 };
-
-
 
 
 

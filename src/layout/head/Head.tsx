@@ -98,8 +98,9 @@ export const Head = () => {
 
 
     const pages = [
-        { id: 1, action: <Link to="/student">Lista Studenti</Link> },
-        { id: 2, action: 'Nuovo utente ' }
+        { id: 1, action: <Link to="/tsxExplanation">tsxExplanation</Link> },
+        { id: 2, action: <Link to="/student">Lista Studenti</Link> },
+        { id: 3, action: 'Nuovo utente ' }
     ];
 
     const settings = [
