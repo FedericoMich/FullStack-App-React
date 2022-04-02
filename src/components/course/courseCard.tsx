@@ -8,6 +8,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import EditOffIcon from '@mui/icons-material/EditOff';
 import './course.css'
 import { FormUpdateCourse } from '../home/formUpdateCourse';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { Link } from 'react-router-dom';
+
 
 
 export const CourseCard = (props: CourseType) => {
@@ -16,31 +19,35 @@ export const CourseCard = (props: CourseType) => {
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         setEditCourse(!editCourse)
-        console.log("ciao")
     }
 
 
 
-    const { CourseUpdate } = useCourse();
+    const { CourseUpdate, CourseDelete } = useCourse();
 
     return (
 
         <div className="commitCard">
             <Grid item xs={12}>
                 <CardContent>
-                    <Typography variant="h5" component="div">
-                        {props.name}
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                        {props.year}
-                    </Typography>
+                    <Link to={"/course/" + props.id}>
+                        <Typography variant="h5" component="div">
+                            {props.name}
+                        </Typography>
+                        <Typography variant="h5" component="div">
+                            {props.year}
+                        </Typography>
+                    </Link>
                     <div className="editCourseContainer">
                         <button className="editCourseIcon"
                             onClick={handleClick}>
                             {editCourse ? <EditOffIcon /> : <EditIcon />}
                         </button>
                     </div>
-                    {editCourse && <FormUpdateCourse />}
+                    <button className="editCourseIcon"
+                        onClick={() => CourseDelete(props.id)}> <DeleteForeverIcon />
+                    </button>
+                    {editCourse && <FormUpdateCourse {...props} />}
                 </CardContent>
             </Grid>
         </div >

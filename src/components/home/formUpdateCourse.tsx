@@ -4,9 +4,11 @@ import { useCourse } from '../../hooks/useCourse'
 import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { CourseType } from '../../types/typesComponent'
 
 
-export const FormUpdateCourse = () => {
+
+export const FormUpdateCourse = (props:CourseType) => {
 
     const [name, setName] = useState('')
     const [year, setYear] = useState('')
@@ -46,7 +48,7 @@ export const FormUpdateCourse = () => {
                                     onChange={handleYearChange}
                                 />
                             </div>
-                            <button className='form-input-btn' type='submit' onClick={() => CourseUpdate(name, year)}>
+                            <button className='form-input-btn' type='submit' onClick={() => CourseUpdate(name, year, props.id)}>
                                 Add Course
                             </button>
                         </form>

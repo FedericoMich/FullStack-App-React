@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { addCourse } from "../api/apiRepos"
 import { getCourse } from "../api/apiRepos"
 import { updateCourse } from "../api/apiRepos"
+import { deleteCourse } from "../api/apiRepos"
 
 
 
 export const useCourse = () => {
     const [createCourse, setCreateCourse] = useState([]);
-    const [upCourse, setUpCourse] = useState([]);
     const [Course, setCourse] = useState([]);
     const [loading, setLoading] = useState(true)
     const [onError, setOnError] = useState(false);
@@ -17,7 +17,7 @@ export const useCourse = () => {
             try {
                 setCourse(await getCourse())
                 setLoading(false)
-            } catch (err) {
+            } catch (e) {
                 setOnError(true);
                 setLoading(false)
             }
@@ -38,10 +38,10 @@ export const useCourse = () => {
         }
     }
 
-    const CourseUpdate = async (name: string, year: string) => {
+    const CourseUpdate = async (name: string, year: string, id: any) => {
         setLoading(true)
         try {
-            setUpCourse(await updateCourse(name, year))
+            await updateCourse(name, year, id)
             setLoading(false)
         } catch (err) {
             setOnError(true);
@@ -49,5 +49,18 @@ export const useCourse = () => {
         }
     }
 
-    return { createCourse, loading, onError, CourseAdd, Course, CourseUpdate};
+    const CourseDelete = async (id: any) => {
+        setLoading(true)
+        try {
+            await deleteCourse(id)
+            window.location.reload();
+            setLoading(false)
+        } catch (err) {
+            setOnError(true);
+            setLoading(false)
+        }
+    }
+
+
+    return { createCourse, loading, onError, CourseAdd, Course, CourseUpdate, CourseDelete };
 }
