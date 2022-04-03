@@ -15,8 +15,9 @@ export const CoursePage = () => {
                 {singleCourse?.name}
                 <br></br>
                 {singleCourse?.year}
+                <FormAddStudent />
             </div>
-            <FormAddStudent />
+           
         </div >
     )
 

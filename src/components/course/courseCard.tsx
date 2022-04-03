@@ -38,15 +38,17 @@ export const CourseCard = (props: CourseType) => {
                             {props.year}
                         </Typography>
                     </Link>
-                    <div className="editCourseContainer">
+                    <div className="courseSetting">
+                        <div className="editCourseContainer">
+                            <button className="editCourseIcon"
+                                onClick={handleClick}>
+                                {editCourse ? <EditOffIcon /> : <EditIcon />}
+                            </button>
+                        </div>
                         <button className="editCourseIcon"
-                            onClick={handleClick}>
-                            {editCourse ? <EditOffIcon /> : <EditIcon />}
+                            onClick={() => CourseDelete(props.id)}> <DeleteForeverIcon />
                         </button>
                     </div>
-                    <button className="editCourseIcon"
-                        onClick={() => CourseDelete(props.id)}> <DeleteForeverIcon />
-                    </button>
                     {editCourse && <FormUpdateCourse {...props} />}
                 </CardContent>
             </Grid>

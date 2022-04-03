@@ -6,7 +6,7 @@
 
 .homeContainer {
   text-align: center;
-  margin: 50px 0px;
+  margin: 20px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +21,7 @@
 }
 
 .commitsContainer {
+  margin-top: 20px;
   max-width: 1400px;
   display: flex;
   color: var(--fontcolor1);
@@ -29,15 +30,13 @@
 }
 
 .headerContentContainer {
-  margin: 1rem;
-  padding: 1rem;
   background-color: var(--color4);
   border-radius: 30px;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
 
-.headerContentContainerUpdate{
+.headerContentContainerUpdate {
   margin: 1rem;
   padding: 1rem;
   background-color: whitesmoke;
@@ -45,3 +44,82 @@
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
+
+.formCreateCourse {
+  margin: 15px;
+  padding: 15px;
+}
+
+.form-inputs-container {
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.form-inputs {
+  border: 5px;
+  margin: 5px;
+}
+
+.form-inputs input {
+  height: 30px;
+  border: solid 1px var(--color1);
+  border-radius: 8px;
+  font-size: 16px
+}
+
+
+.btn41-43 {
+  padding: 10px 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-41 {
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 1;
+  color: white;
+}
+
+.btn-41:after {
+  position: absolute;
+  border-radius: 5px;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  background: #0d2137;
+  transition: all 0.3s ease;
+}
+
+.btn-41:hover {
+  color: whitesmoke;
+}
+
+.btn-41:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-41:active {
+  top: 2px;
+}
+
+
+
+
+
+

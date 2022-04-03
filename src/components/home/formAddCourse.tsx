@@ -22,37 +22,33 @@ export const FormAddCourse = () => {
 
     return (
         <div className="headerContentContainer">
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={3}>
-                    <Grid item xs>
-                        <form>
-                            <div className='form-inputs'>
-                                <input
-                                    className='form-input'
-                                    type='name'
-                                    name='name'
-                                    placeholder='Name'
-                                    value={name}
-                                    onChange={handleNameChange}
-                                />
-                            </div>
-                            <div className='form-inputs'>
-                                <input
-                                    className='form-input'
-                                    type='year'
-                                    name='year'
-                                    placeholder='year'
-                                    value={year}
-                                    onChange={handleYearChange}
-                                />
-                            </div>
-                            <button className='form-input-btn' type='submit' onClick={() => CourseAdd(name, year)}>
-                                Add Course
-                            </button>
-                        </form>
-                    </Grid>
-                </Grid>
-            </Box>
+            <form className="formCreateCourse">
+                <div className='form-inputs-container'>
+                    <div className='form-inputs'>
+                        <input
+                            className='form-input'
+                            type='name'
+                            name='name'
+                            placeholder='Name'
+                            value={name}
+                            onChange={handleNameChange}
+                        />
+                    </div>
+                    <div className='form-inputs'>
+                        <input
+                            className='form-input'
+                            type='year'
+                            name='year'
+                            placeholder='year'
+                            value={year}
+                            onChange={handleYearChange}
+                        />
+                    </div>
+                </div>
+                <button className='btn41-43 btn-41' type='submit' onClick={() => CourseAdd(name, year)}>
+                    Create Course
+                </button>
+            </form>
         </div>
 
 

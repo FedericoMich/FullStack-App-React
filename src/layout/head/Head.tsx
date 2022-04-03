@@ -99,13 +99,15 @@ export const Head = () => {
 
     const pages = [
         { id: 1, action: <Link to="/tsxExplanation">tsxExplanation</Link> },
-        { id: 2, action: <Link to="/home">Classi</Link> }
+        { id: 2, action: <Link to="/home">Classi</Link> },
+        { id: 3, action: <Link to="/allStudent">Lista Studenti</Link> }
     ];
 
     const settings = [
         { id: 1, action: <Link to="/tsxExplanation">tsxExplanation</Link> },
         { id: 2, action: <Link to="/home">Classes</Link> },
-        { id: 3, action:  <button>esci <LogoutIcon /> </button> }
+        { id: 3, action: <Link to="/allStudent">Lista Studenti</Link> },
+        { id: 4, action:  <button>esci <LogoutIcon /> </button> }
     ];
 
     return (

@@ -8,7 +8,7 @@ import { CourseType } from '../../types/typesComponent'
 
 
 
-export const FormUpdateCourse = (props:CourseType) => {
+export const FormUpdateCourse = (props: CourseType) => {
 
     const [name, setName] = useState('')
     const [year, setYear] = useState('')
@@ -24,37 +24,31 @@ export const FormUpdateCourse = (props:CourseType) => {
 
     return (
         <div className="headerContentContainerUpdate">
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={3}>
-                    <Grid item xs>
-                        <form>
-                            <div className='form-inputs'>
-                                <input
-                                    className='form-input'
-                                    type='name'
-                                    name='name'
-                                    placeholder='Name'
-                                    value={name}
-                                    onChange={handleNameChange}
-                                />
-                            </div>
-                            <div className='form-inputs'>
-                                <input
-                                    className='form-input'
-                                    type='year'
-                                    name='year'
-                                    placeholder='year'
-                                    value={year}
-                                    onChange={handleYearChange}
-                                />
-                            </div>
-                            <button className='form-input-btn' type='submit' onClick={() => CourseUpdate(name, year, props.id)}>
-                                Add Course
-                            </button>
-                        </form>
-                    </Grid>
-                </Grid>
-            </Box>
+            <form>
+                <div className='form-inputs'>
+                    <input
+                        className='form-input'
+                        type='name'
+                        name='name'
+                        placeholder='Name'
+                        value={name}
+                        onChange={handleNameChange}
+                    />
+                </div>
+                <div className='form-inputs'>
+                    <input
+                        className='form-input'
+                        type='year'
+                        name='year'
+                        placeholder='year'
+                        value={year}
+                        onChange={handleYearChange}
+                    />
+                </div>
+                <button className='form-input-btn' type='submit' onClick={() => CourseUpdate(name, year, props.id)}>
+                    Update Course
+                </button>
+            </form>
         </div>
     )
 };

@@ -1,15 +1,17 @@
 import './home.css'
 import { useState } from 'react';
 import { useUser } from '../../hooks/useUser'
+import { useParams } from "react-router-dom";
+
 
 export const FormAddStudent = () => {
-
+    const { id } = useParams()
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [repos, setRepos] = useState('')
 
 
-    const { UserAdd } = useUser(name, surname, repos);
+    const { UserAdd } = useUser();
 
 
     function handleNameChange(event: React.FormEvent<HTMLInputElement>) {
@@ -51,11 +53,12 @@ export const FormAddStudent = () => {
                     type='repos'
                     name='repos'
                     placeholder='repos'
+                    value={repos}
                     onChange={handleReposChange}
                 />
             </div>
             <br /> <br />
-            <button className='form-input-btn' type='submit' onClick={UserAdd}>
+            <button className='form-input-btn' type='submit' onClick={() => UserAdd(name,surname,repos,id)}>
                 Add User
             </button>
         </form>

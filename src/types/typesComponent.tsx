@@ -29,7 +29,7 @@ export interface CourseType {
 export type UserType = {
     name: string,
     surname: string,
-    repos: string,
+    repos?: string,
 };
 
 

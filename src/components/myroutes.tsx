@@ -5,6 +5,7 @@ import { HomePages } from '../pages/homePages';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TsxExplanationPage } from "../pages/tsxExplanationPage";
 import { CoursePage } from "../pages/coursePage";
+import { StudentPage } from "../pages/studentPage";
 export const Myroutes = () => {
 
     return <BrowserRouter>
@@ -13,6 +14,7 @@ export const Myroutes = () => {
             <Route path="/" element={<App />} >
                 <Route path="/home" element={<HomePages />} />
                 <Route path="/course/:id" element={<CoursePage />} /> 
+                <Route path="/allStudent" element={<StudentPage />} /> 
                 <Route path="/tsxExplanation" element={<TsxExplanationPage />} />        
             </Route>
             <Route path="*" element={<NotFoundPages />} />
