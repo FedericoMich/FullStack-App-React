@@ -2,8 +2,6 @@ import './home.css'
 import { useState } from 'react';
 import { useCourse } from '../../hooks/useCourse'
 import React from 'react'
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 
 
 export const FormAddCourse = () => {

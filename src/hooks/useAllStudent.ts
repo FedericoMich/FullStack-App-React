@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getUser } from "../api/apiRepos"
+import { getUser } from "../api/apiUser"
 
 
 export const useAllStudent = () => {

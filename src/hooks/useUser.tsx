@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
-import { addUser } from "../api/apiRepos"
-//import { getUser } from "../api/apiRepos"
-//import { updateUser } from "../api/apiRepos"
-import { getUserByCourseId } from "../api/apiRepos"
+import { getUserByCourseId, deleteUser, addUser, updateUser } from "../api/apiUser"
 import { useParams } from "react-router-dom";
 
 
@@ -16,7 +13,7 @@ export const useUser = () => {
     const [onError, setOnError] = useState(false);
 
     useEffect(() => {
-        const populate = async (id:any) => {
+        const populate = async (id: any) => {
             try {
                 setUser(await getUserByCourseId(id))
                 setLoading(false)
@@ -29,7 +26,7 @@ export const useUser = () => {
     }, [id])
 
 
-    const UserAdd = async (name: string, surname: string, repos: string, id:any) => {
+    const UserAdd = async (name: string, surname: string, repos: string, id: any) => {
         setLoading(true)
         try {
             setCreateUser(await addUser(name, surname, repos, id))
@@ -40,6 +37,29 @@ export const useUser = () => {
         }
     }
 
+    const UserDelete = async (id: any) => {
+        setLoading(true)
+        try {
+            await deleteUser(id)
+            window.location.reload();
+            setLoading(false)
+        } catch (err) {
+            setOnError(true);
+            setLoading(false)
+        }
+    }
 
-    return { loading, onError, user, UserAdd };
+    const UserUpdate = async (name: string, surname: string, repos: string, id: any) => {
+        setLoading(true)
+        try {
+            await updateUser(name, surname,  repos, id)
+            setLoading(false)
+        } catch (err) {
+            setOnError(true);
+            setLoading(false)
+        }
+    }
+
+
+    return { loading, onError, user, UserAdd, UserDelete, UserUpdate };
 }

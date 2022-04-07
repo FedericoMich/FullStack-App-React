@@ -2,8 +2,6 @@ import './home.css'
 import { useState } from 'react';
 import { useCourse } from '../../hooks/useCourse'
 import React from 'react'
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import { CourseType } from '../../types/typesComponent'
 
 
@@ -40,12 +38,12 @@ export const FormUpdateCourse = (props: CourseType) => {
                         className='form-input'
                         type='year'
                         name='year'
-                        placeholder='year'
+                        placeholder='Year'
                         value={year}
                         onChange={handleYearChange}
                     />
                 </div>
-                <button className='form-input-btn' type='submit' onClick={() => CourseUpdate(name, year, props.id)}>
+                <button className='btn41-43 btn-41' type='submit' onClick={() => CourseUpdate(name, year, props.id)}>
                     Update Course
                 </button>
             </form>

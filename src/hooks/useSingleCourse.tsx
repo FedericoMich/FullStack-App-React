@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getSingleCourse } from "../api/apiRepos"
+import { getSingleCourse } from "../api/apiCourse"
 import { useParams } from "react-router-dom";
 import {CourseType} from '../types/typesComponent'
 
@@ -28,7 +28,7 @@ export const useSingleCourse = () => {
             }
         }
         populate(id)
-    }, [])
+    }, [id])
 
 
 

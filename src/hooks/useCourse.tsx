@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react'
-import { addCourse } from "../api/apiRepos"
-import { getCourse } from "../api/apiRepos"
-import { updateCourse } from "../api/apiRepos"
-import { deleteCourse } from "../api/apiRepos"
-
+import { deleteCourse, updateCourse, getCourse, addCourse } from "../api/apiCourse"
 
 
 export const useCourse = () => {

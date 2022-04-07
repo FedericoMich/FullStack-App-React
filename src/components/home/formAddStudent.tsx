@@ -58,7 +58,7 @@ export const FormAddStudent = () => {
                 />
             </div>
             <br /> <br />
-            <button className='form-input-btn' type='submit' onClick={() => UserAdd(name,surname,repos,id)}>
+            <button className='btn41-43 btn-41' type='submit' onClick={() => UserAdd(name,surname,repos,id)}>
                 Add User
             </button>
         </form>

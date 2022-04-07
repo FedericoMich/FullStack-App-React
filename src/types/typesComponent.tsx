@@ -27,6 +27,7 @@ export interface CourseType {
     year: string,
   }
 export type UserType = {
+    id?: any | null,
     name: string,
     surname: string,
     repos?: string,

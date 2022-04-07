@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 export const CourseCard = (props: CourseType) => {
 
     const [editCourse, setEditCourse] = useState<Boolean>(false);
@@ -21,12 +22,9 @@ export const CourseCard = (props: CourseType) => {
         setEditCourse(!editCourse)
     }
 
-
-
     const { CourseUpdate, CourseDelete } = useCourse();
 
     return (
-
         <div className="commitCard">
             <Grid item xs={12}>
                 <CardContent>
@@ -52,7 +50,9 @@ export const CourseCard = (props: CourseType) => {
                     {editCourse && <FormUpdateCourse {...props} />}
                 </CardContent>
             </Grid>
-        </div >
+        </div>
+
+
     )
 
 };
